@@ -1,0 +1,43 @@
+#
+Hello, and thank you for coming to this talk. My name is John, from the university of sheffield RSE team. I hope you can all My talk will be about making the most out of Jupyter Notebooks.
+
+#
+Notebooks are interesting tools. 
+They help to rapidly prototype and scaffold code and ideas. Its quite easy to write up some code, then see the effects that changes to code and input have.
+They help examine and understand data sets. It is an environment in which one can combine code with data and statistics in one file.
+The layout and format of a notebook lends itself well to education and information. The nature of notebooks form a narritive with the help of graphics and multimedia additions
+
+And of course there are shortcommings of notebooks.
+It lacks rigorous structure in which to manage and maintain large files of code. There needs to be consideration for reusing functions within the document itself or other documents/notebooks.
+The style and format of notebooks, while good for informing, are less good for mainatinance and good coding. ...
+
+In this talk I hope to provide some routes and ideas in which to strengthen the advantages, and mitigate the disadvantages of notebooks. This will be done with extentions. Due to the open-nature source of jupyter notebooks there are lots of collaborative efforts to entend ways of using notebooks. There are hundreds of libraries and extentions to jupyter notebooks alone. With what I present I hope to highlight some of the most impactful libraries when considering the pros and cons of notebooks, as well as highlight those I have found most useful myself
+
+#
+One potential issue of jupyter notebooks in particular, compared to things like Rnotebook, is the saved file format. The ipynb file is internally saved as a json format. When compared to plain text it is able to hold a wider variety of information, such as notebook outputs, at the cost of being less human readable, and less accessible outside of notebooks.
+The library jupytext addresses this by allowing the user to save notebooks as plain text files. Examples include markdown, R markdown (which is sort of markdown on steroids), as well as many other common formats.
+It also allows reading in these files as notebooks.
+I have given the pip command to install this package, and the whole command is prefixed with an exclamation mark. An exclamation mark means running a console command from within jupyter notebooks, so packages and libraries can be installed without external tools. However, I would advise using a python envoronment manager, such as conda, to ensure easy replication of environments for colaboration and repoduction.
+
+This allows for 2 useful things. the first is the ability to edit and alter notebooks within an IDE (integrated development environment, such as Visual studio code, or eclipse), since IDEs can handle such files more easily since they are much more common. This allows using the IDE features such as code completion and formating. Having made changes, save the document and refresh the notebook page to reload and display the changes just made.
+The other useful change is that text files are much nice for version control. With the default file format, Its possible to make a small change in the notebook that results in a big change to the ipynb file. This makes it hard to perform things like code reviews without actually booting up a notebook to see. plaintext files are much close to what-you-see-is-what-you-get. Performing git diff and merge becomes much simpler.
+
+#
+On the theme of helping with good coding practices is testing. If you were here last month for the talk you might remember an introduction to pytest by David. 
+There are many different routes to testing notebooks. Some might argue that you should move away from notebooks the moment you can, to take proper advantage of things like pytesting. Others might suggest writing python scripts which run notebooks and tests the outputs.
+nbval is a middleground which encourages testing code while still within notebooks without the need for using external scripts, outside of the command line. It works by using a ipynb file format with outputs, and compares the test outputs with those saved in the file. So whereas you would commonly assert that an output is equal to something, here you test that the output is equal to ...
+This is useful to ensure that changes to code still produce the same output. 
+
+While it is possible to run command line functions from within a notebook. Asking the notebook to run the pytest command within itself results in a terrible recursive loop that continualy try to test itself.
+
+# 
+Widgets are a useful intuitive way to interact and examine code anda data. widgets in this case are ways to select data from respective data types, such as tickboxes for booleans, sliders for floats, and more complex items such as colour pickers and tabs.
+
+Using widgets with the RISE library I can run interactive code within the slideshow, and I would like to demonstrate that to you. Here i have a simple plotting function defined behind the scenes. It takes arguments for frequency, amplitute, and curve type. The interact function creates associated UI elements for each argument, and calls the plot function each time the data changes. It is also able to infere what UI element to use from the data types provided. frequency is provided a tuple of floats, so it creates a slider. graph type is explicelty created as a dropdown menu.
+
+Another useful widget is the play widget. This runs a sequence of integers. Here i have the graph function again, with 2 of the inputs now fixed, and the frequency being iterated over.
+
+#
+Dataframes are a key way of storing data, and Qgrid is a different way of interacting with data stored in a dataframe. It provides a way to sort, scroll and filter data, as well as add and remove rows quickly from the dataset. It is able to filter depending on the data type, so dates for datetimes, sliders for numbers.
+
+Changes to the dataframe through filtering can propagate to associate graphs

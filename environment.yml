@@ -1,0 +1,19 @@
+name: jupyter
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.7
+  - jupytext
+  - notebook
+  - jupyterthemes
+  - rise
+  - jupyter_nbextensions_configurator
+  - jupyter_contrib_nbextensions
+  - ipywidgets
+  - qgrid
+  - pandas
+  - nbval
+  - pytest-cov
+prefix: D:\ProgramData\Anaconda3\envs\jupyter
+
