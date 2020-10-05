@@ -1,5 +1,5 @@
 #
-Hello, and thank you for coming to this talk. My name is John, from the university of sheffield RSE team. I hope you can all My talk will be about making the most out of Jupyter Notebooks.
+Hello, and thank you for coming to this talk. My name is John, from the university of sheffield RSE team. I hope you can all hear me and see the screen. My talk will be about making the most out of Jupyter Notebooks.
 
 #
 Notebooks are interesting tools. 
@@ -30,8 +30,15 @@ This is useful to ensure that changes to code still produce the same output.
 
 While it is possible to run command line functions from within a notebook. Asking the notebook to run the pytest command within itself results in a terrible recursive loop that continualy try to test itself.
 
+#
+To help with presentation and explanation of information, slideshows are a great tool. jupyter notebooks are able to be used with slideshows. It is possible to assign and group cells into slides and sub-slides, as well as hide cells from the generated output. The use of markdown as a cell type allows for formating of text. 
+
+one approach to creating a slideshow is using jupyter notebooks' built in slide feature. You can run nbconvert from the command line to create static file formats. This will create things like html or pdf. the --post serve argument also serves generated html locally. 
+
+Another approach is to use the rise library. This uses the reveal javascript framework within the notebook, which allows for running code within the presentation. This very talk is using rise, and i'll demonstrate next slide running code while within a presentation. This can be very useful for more discussion-based presentations, where the ability to dynamically show results without exiting the slideshow and hiding the unneccesary back end, is very useful.
+
 # 
-Widgets are a useful intuitive way to interact and examine code anda data. widgets in this case are ways to select data from respective data types, such as tickboxes for booleans, sliders for floats, and more complex items such as colour pickers and tabs.
+Widgets are a useful intuitive  way to interact and examine code and data. widgets in this case are ways to select data from respective data types, such as tickboxes for booleans, sliders for floats, and more complex items such as colour pickers and tabs.
 
 Using widgets with the RISE library I can run interactive code within the slideshow, and I would like to demonstrate that to you. Here i have a simple plotting function defined behind the scenes. It takes arguments for frequency, amplitute, and curve type. The interact function creates associated UI elements for each argument, and calls the plot function each time the data changes. It is also able to infere what UI element to use from the data types provided. frequency is provided a tuple of floats, so it creates a slider. graph type is explicelty created as a dropdown menu.
 
@@ -41,3 +48,15 @@ Another useful widget is the play widget. This runs a sequence of integers. Here
 Dataframes are a key way of storing data, and Qgrid is a different way of interacting with data stored in a dataframe. It provides a way to sort, scroll and filter data, as well as add and remove rows quickly from the dataset. It is able to filter depending on the data type, so dates for datetimes, sliders for numbers.
 
 Changes to the dataframe through filtering can propagate to associate graphs
+
+
+
+#
+Which extentions work where? y=yes/works n=no m=sometimes (depending on versions)
+
+			notebook	labs
+jupytext	y			y
+nbval		y 			n
+rise		y 			m
+ipywidgets	y 			y 
+qgrid		y 			y
