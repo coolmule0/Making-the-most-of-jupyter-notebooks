@@ -2,11 +2,11 @@
 Hello, and thank you for coming to this talk. My name is John, from the university of sheffield RSE team. I hope you can all hear me and see the screen. My talk will be about making the most out of Jupyter Notebooks.
 
 #
-Notebooks are interesting tools. 
-They help to rapidly prototype and scaffold code and ideas. Its quite easy to write up some code, then see the effects that changes to code and input have.
-They help examine and understand data sets. It is an environment in which one can combine code with data and statistics in one file.
-The layout and format of a notebook lends itself well to education and information. The nature of notebooks form a narritive with the help of graphics and multimedia additions
-
+Notebooks are interesting tools, with upsides and downsides.
+They help to rapidly prototype and scaffold code and ideas. Its quite easy to write up some code, make changes, and clearly see the resulting effects.
+Notebooks help examine and understand data sets. The use of code, data and graphs within one file provides a feeling of control and understanding of the data. 
+The order of data, code, results in one file also provides a good narative structure. This naturally lends itself to presenting and informing
+ 
 And of course there are shortcommings of notebooks.
 It lacks rigorous structure in which to manage and maintain large files of code. There needs to be consideration for reusing functions within the document itself or other documents/notebooks.
 The style and format of notebooks, while good for informing, are less good for mainatinance and good coding. ...
@@ -49,7 +49,8 @@ Dataframes are a key way of storing data, and Qgrid is a different way of intera
 
 Changes to the dataframe through filtering can propagate to associate graphs
 
-
+#
+I hope this has shown some of the uses of extensions with jupyter notebooks. There are hundreds more, and some may be helpful for the next notebook you create.
 
 #
 Which extentions work where? y=yes/works n=no m=sometimes (depending on versions)
